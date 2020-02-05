@@ -5,3 +5,19 @@
 <br><br>
 
 Upload new file
+<%= form_for(:book, url: books_path, :html => { :method => :post }) do |form| %>
+
+<%# <%= form_with scope: :books, url: books_path, local: true do |form| %>
+  <p>
+    <%= form.label ('File Title') %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%# <%= form.file_field :text %>
+  </p>
+
+  <p>
+    <%= form.submit ('Upload file')%>
+  </p>
+<% end %>
