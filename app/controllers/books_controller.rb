@@ -5,6 +5,11 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_param)
+    redirect_to @book
+  end
+
+  def show
+    @book = Book.find(params[:id])
   end
 
   private
