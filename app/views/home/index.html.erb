@@ -21,3 +21,11 @@ Upload new file
     <%= form.submit ('Upload file')%>
   </p>
 <% end %>
+
+<br><br>
+
+<% @book_list.each do |b| %>
+<p>
+  <%= b.title %>
+</p>
+<% end %>

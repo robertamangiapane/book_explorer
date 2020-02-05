@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
   def index
-  #   if !current_user
-  #     render 'devise/sessions/new'
-  #   else
-  #     @book = Book.new
-  #     @book_list = Book.all.reverse
-  #   end
+    if !current_user
+      render 'devise/sessions/new'
+    else
+      @book = Book.new
+      @book_list = Book.all.reverse
+    end
   end
 end
