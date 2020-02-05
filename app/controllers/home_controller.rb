@@ -4,7 +4,7 @@ class HomeController < ApplicationController
       render 'devise/sessions/new'
     else
       @book = Book.new
-      @book_list = Book.all.reverse
+      @book_list = Book.where(user_id: current_user).reverse
     end
   end
 end
