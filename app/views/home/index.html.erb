@@ -26,6 +26,6 @@ Upload new file
 
 <% @book_list.each do |b| %>
 <p>
-  <%= b.title %>
+  <%= link_to b.title, book_path(id: b.id) %>
 </p>
 <% end %>

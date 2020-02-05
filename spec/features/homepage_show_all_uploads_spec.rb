@@ -27,4 +27,12 @@ RSpec.feature 'Homepage show all the file uploaded' do
 
     expect(page).to have_content 'title test1'
   end
+
+  scenario 'click on title will redirect to file content' do
+    user_sign_up
+    user_upload_file1
+    click_link('title test1')
+
+    expect(page).to have_content 'title test1'
+  end
 end
