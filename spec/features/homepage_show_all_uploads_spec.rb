@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Homepage show all the file uploaded' do
+RSpec.feature 'Homepage show all the csv file uploaded' do
   scenario 'last file is shown' do
     user_sign_up
     user_upload_file1

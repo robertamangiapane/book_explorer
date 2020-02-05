@@ -7,9 +7,9 @@ Welcome <%= current_user.email %>
 <br><br>
 
 Upload new file
-<%= form_for(:book, url: books_path, :html => { :method => :post }) do |form| %>
+<%= form_for(:csv, url: csvs_path, :html => { :method => :post }) do |form| %>
 
-<%# <%= form_with scope: :books, url: books_path, local: true do |form| %>
+<%# <%= form_with scope: :csvs, url: csvs_path, local: true do |form| %>
   <p>
     <%= form.label ('File Title') %><br>
     <%= form.text_field :title %>
@@ -26,8 +26,8 @@ Upload new file
 
 <br><br>
 
-<% @book_list.each do |b| %>
+<% @csv_list.each do |f| %>
 <p>
-  <%= link_to b.title, book_path(id: b.id) %>
+  <%= link_to f.title, csv_path(id: f.id) %>
 </p>
 <% end %>

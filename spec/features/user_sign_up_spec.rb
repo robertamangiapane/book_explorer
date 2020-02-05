@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Upload new file' do
+RSpec.feature 'Upload new csv' do
   scenario 'page display upload form' do
     user_sign_up
 
