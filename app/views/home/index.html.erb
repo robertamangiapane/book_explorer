@@ -7,27 +7,17 @@ Welcome <%= current_user.email %>
 <br><br>
 
 Upload new file
-<%= form_for(:csv, url: csvs_path, :html => { :method => :post }) do |form| %>
 
-<%# <%= form_with scope: :csvs, url: csvs_path, local: true do |form| %>
-  <p>
-    <%= form.label ('File Title') %><br>
-    <%= form.text_field :title %>
-  </p>
 
-  <p>
-    <%# <%= form.file_field :text %>
-  </p>
-
-  <p>
-    <%= form.submit ('Upload file')%>
-  </p>
+<br>
+<%= form_with model: @csv do |f| %>
+  <%= f.file_field :file %>
+  <%= f.submit ('Upload file')%>
 <% end %>
-
-<br><br>
+<br>
 
 <% @csv_list.each do |f| %>
 <p>
-  <%= link_to f.title, csv_path(id: f.id) %>
+  <%= link_to f.filename, csv_path(id: f.id) %>
 </p>
 <% end %>
