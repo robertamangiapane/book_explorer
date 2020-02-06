@@ -1,22 +1,22 @@
 def user_upload_file
-  fill_in ('csv_title'), with: 'title test'
+  find('form input[type="file"]').set('app/assets/images/Test_CSV.csv')
   click_button('Upload file')
 end
 
 def user_upload_file1
-  fill_in ('csv_title'), with: 'title test1'
+  find('form input[type="file"]').set('app/assets/images/Test_CSV1.csv')
   click_button('Upload file')
   click_link('Home')
 end
 
 def user_upload_file2
-  fill_in ('csv_title'), with: 'title test2'
+  find('form input[type="file"]').set('app/assets/images/Test_CSV2.csv')
   click_button('Upload file')
   click_link('Home')
 end
 
 def user_upload_file3
-  fill_in ('csv_title'), with: 'title test3'
+  find('form input[type="file"]').set('app/assets/images/Test_CSV3.csv')
   click_button('Upload file')
   click_link('Home')
 end

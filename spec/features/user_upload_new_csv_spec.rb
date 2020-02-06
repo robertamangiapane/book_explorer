@@ -5,6 +5,6 @@ RSpec.feature 'Upload new csv file' do
     user_sign_up
     user_upload_file
 
-    expect(page).to have_content 'title test'
+    expect(page).to have_content 'Test_CSV.csv'
   end
 end
