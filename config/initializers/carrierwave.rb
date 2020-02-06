@@ -1,10 +1,13 @@
-# if  Rails.env.test?
-#   CarrierWave.configure do |config|
-#     config.storage = :file
-#   end
-# end
-#
-# if Rails.env.development? || Rails.env.production?
+if Rails.env.test?
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.enable_processing = false
+    # config.root = "#{Rails.root}/tmp"
+    # config.cache_dir = "#{Rails.root}/tmp/uploads"
+  end
+end
+
+if Rails.env.development? || Rails.env.production?
   CarrierWave.configure do |config|
 
   config.storage    = :aws
@@ -16,5 +19,5 @@
     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
     region:            ENV.fetch('AWS_REGION')
   }
-  # end
+  end
 end

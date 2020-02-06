@@ -17,6 +17,12 @@ require_relative 'features/web_helpers/user_sign_up_helper'
 require_relative 'features/web_helpers/user_upload_file_helper'
 
 RSpec.configure do |config|
+  config.after(:all) do
+    if Rails.env.test?
+      FileUtils.rm_rf(Dir["#{Rails.root}/public/uploads"])
+      # FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+    end
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
