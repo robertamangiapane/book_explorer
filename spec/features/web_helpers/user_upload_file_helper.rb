@@ -30,3 +30,8 @@ def user_upload_invalid_file2
   find('form input[type="file"]').set('app/assets/images/Test_CSV_invalid2.csv')
   click_button('Upload file')
 end
+
+def user_upload_invalid_file3
+  find('form input[type="file"]').set('app/assets/images/Test_CSV_invalid3.csv')
+  click_button('Upload file')
+end

@@ -4,7 +4,7 @@ class UuidChecker
     result = true
     content.each do |row|
 
-      if row[3].length != 4 || row[3] != row[3].to_i.to_s
+      if row[3] == nil || row[3] != row[3].to_i.to_s || (row[3].to_i.digits).count != 4
         result = false
       end
     end
