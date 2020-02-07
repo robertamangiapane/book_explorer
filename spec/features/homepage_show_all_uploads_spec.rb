@@ -32,7 +32,8 @@ RSpec.feature 'Homepage show all the csv file uploaded' do
     user_sign_up
     user_upload_file1
     click_link('Test_CSV1.csv')
+    content = CSV.open('app/assets/images/Test_CSV1.csv').read
 
-    expect(page).to have_content 'Test_CSV1.csv'
+    expect(page).to have_content content.join(' ')
   end
 end

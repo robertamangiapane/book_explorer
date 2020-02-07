@@ -14,6 +14,7 @@ class CsvsController < ApplicationController
 
   def show
     @csv = Csv.find(params[:id])
+
     @csv_content = CSV.parse(open(@csv.url))
   end
 

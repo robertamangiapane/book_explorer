@@ -19,7 +19,7 @@ require_relative 'features/web_helpers/user_upload_file_helper'
 RSpec.configure do |config|
   config.after(:all) do
     if Rails.env.test?
-      FileUtils.rm_rf(Dir["#{Rails.root}/public/uploads"])
+      FileUtils.rm_rf(Dir["#{Rails.root}/app/uploads"])
       # FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
     end
   end
