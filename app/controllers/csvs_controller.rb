@@ -8,13 +8,17 @@ class CsvsController < ApplicationController
     @csv = Csv.create(csv_param)
     @csv.filename = csv_param[:file].original_filename
     @csv.url = @csv.file.url
-
     @csv.save!
     redirect_to @csv
   end
 
   def show
     @csv = Csv.find(params[:id])
+    @csv_content = []
+    CSV.new(open(@csv.url)).each do |row|
+      @csv_content.append(row)
+    end
+
   end
 
   private
