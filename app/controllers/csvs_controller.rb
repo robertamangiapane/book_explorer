@@ -8,8 +8,13 @@ class CsvsController < ApplicationController
     @csv = Csv.create(csv_param)
     @csv.filename = csv_param[:file].original_filename
     @csv.url = @csv.file.url
-    @csv.save!
-    redirect_to @csv
+
+    # if check_uuid?(@csv)
+      @csv.save!
+      redirect_to @csv
+    # else
+    #   flash[:alert] = 'There is an error with a unique identifier in the file'
+    # end
   end
 
   def show
@@ -23,5 +28,10 @@ class CsvsController < ApplicationController
     new_params = params.require(:csv).permit(:id, :filename, :file, :url)
     new_params.merge(user_id: current_user.id)
   end
+
+  # def check_uuid?(csv)
+  #   content = CSV.parse(open(csv.url))
+  #   # csv.is_uuid_valid(content)
+  # end
 
 end

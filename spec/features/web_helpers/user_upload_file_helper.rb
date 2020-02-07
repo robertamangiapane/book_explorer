@@ -20,3 +20,13 @@ def user_upload_file3
   click_button('Upload file')
   click_link('Home')
 end
+
+def user_upload_invalid_file1
+  find('form input[type="file"]').set('app/assets/images/Test_CSV_invalid.csv')
+  click_button('Upload file')
+end
+
+def user_upload_invalid_file2
+  find('form input[type="file"]').set('app/assets/images/Test_CSV_invalid2.csv')
+  click_button('Upload file')
+end
