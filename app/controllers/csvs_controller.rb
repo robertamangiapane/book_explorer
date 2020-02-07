@@ -14,11 +14,7 @@ class CsvsController < ApplicationController
 
   def show
     @csv = Csv.find(params[:id])
-    @csv_content = []
-    CSV.new(open(@csv.url)).each do |row|
-      @csv_content.append(row)
-    end
-
+    @csv_content = CSV.parse(open(@csv.url))
   end
 
   private
