@@ -9,7 +9,6 @@ class CsvsController < ApplicationController
   def create
     @csv = Csv.new(csv_param)
 
-    # if check_uuid?(@csv.file.url)
     if check_uuid?(csv_param[:file].tempfile)
       @csv = Csv.create(csv_param)
       @csv.filename = csv_param[:file].original_filename
@@ -24,8 +23,8 @@ class CsvsController < ApplicationController
 
   def show
     @csv = Csv.find(params[:id])
-
     @csv_content = CSV.parse(open(@csv.url))
+    @title = @csv.filename
   end
 
   private
