@@ -1,14 +1,19 @@
-<%= link_to('Home', '/') %>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">
+    <%= link_to('Home', '/') %>
+  </span>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+</nav>
 
-<br><br>
-<table border='1'>
-<%@csv_content.each do |row| %>
-<tr>
-<%row.each do |cell| %>
-<td>
-<%= cell %>
-</td>
-<% end%>
-</tr>
-<% end%>
+<br>
+<table class="table table-bordered">
+  <%@csv_content.each do |row| %>
+  <tr>
+  <%row.each do |cell| %>
+  <td>
+  <%= cell %>
+  </td>
+  <% end%>
+  </tr>
+  <% end%>
 </table>
