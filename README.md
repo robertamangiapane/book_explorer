@@ -1,24 +1,28 @@
 # README
+---
+Ruby on Rails application to produce a web page that
+shows the content of a CSV file containing a list of books.
+Files are uploaded on Amazon S3.
+---
+# DEMO
+https://book-explorer-rails.herokuapp.com/
+---
+## To start the application:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Set up your environment:
+`bundle install`
 
-Things you may want to cover:
+* Set up AWS cloud storage service:
 
-* Ruby version
+Create a file '.env', copy the content of the file '.env.dist' and add your own AWS credentials.
 
-* System dependencies
+* Set up PostgreSQL:
+Install PostgreSQL if you don't have it on your local machine.
+The application works only with no password set and 'postgres' default user
 
-* Configuration
+* Set up your database:
+`rails db: create`
+`rails db: migrate`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Open the application locally:
+`rails server`
