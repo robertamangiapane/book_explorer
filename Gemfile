@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.3.1'
 gem 'pg'
 gem 'devise'
 gem 'carrierwave-aws'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'bootstrap', '~> 4.4'
 gem 'dotenv-rails', groups: [:development, :test]
 # Use Puma as the app server
